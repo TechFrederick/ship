@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US" class="bg-white subpixel-antialiased">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <title>SHIP</title>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <main class="container mx-auto p-8 flex-grow">
+    {% block main %}
+      {% for category in servicecategory_list %}
+        <h1>{{ category.name }}</h1>
+      {% endfor %}
+    {% endblock %}
+  </main>
+
+  <footer class="container mx-auto border-t border-gray-400 p-4 text-center text-sm text-gray-600 print-hide">
+    <a href="#" class="mx-1 hover:text-gray-900">About</a>
+  </footer>
+</body>
+</html>
+
