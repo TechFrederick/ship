@@ -29,6 +29,12 @@ Apply Django database migrations locally.
 $ ./manage.py migrate
 ```
 
+Create a local superuser account.
+
+```bash
+$ ./manage.py createsuperuser
+```
+
 Start the local webserver.
 
 ```bash
