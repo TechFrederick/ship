@@ -25,6 +25,9 @@ SECRET_KEY = "ht$zwi=p&&+2e*2s#xj!p#yrw5gwua70vse4&vz@!dadp2&p1g"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Control whether the Django Debug Toolbar is enabled or disabled.
+DEBUG_TOOLBAR = True
+
 ALLOWED_HOSTS = ["*"]
 
 
@@ -52,7 +55,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-if DEBUG:
+if DEBUG and DEBUG_TOOLBAR:
     # Enable the debug toolbar only in DEBUG mode.
     INSTALLED_APPS.append("debug_toolbar")
     MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
