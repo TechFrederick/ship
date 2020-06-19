@@ -22,7 +22,11 @@ class TestService(TestCase):
 
         assert service.name
         assert service.description
-        assert service.location
+        assert service.website
+        assert service.street_address
+        assert service.city
+        assert service.state
+        assert service.zip_code
         assert service.operating_hours
         assert service.phone_number
         assert service.email

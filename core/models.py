@@ -21,7 +21,13 @@ class Service(models.Model):
 
     name = models.CharField(max_length=128)
     description = models.TextField()
-    location = models.CharField(max_length=256)
+    website = models.URLField(default="")
+
+    street_address = models.CharField(max_length=256, default="")
+    city = models.CharField(max_length=128, default="")
+    state = models.CharField(max_length=32, default="")
+    zip_code = models.CharField(max_length=16, default="")
+
     operating_hours = models.CharField(max_length=256)
     phone_number = models.CharField(max_length=32)
     email = models.EmailField()

@@ -15,7 +15,11 @@ class ServiceFactory(factory.django.DjangoModelFactory):
 
     name = factory.Sequence(lambda n: f"Service {n}")
     description = factory.Faker("paragraph")
-    location = factory.Faker("address")
+    website = factory.Faker("url")
+    street_address = factory.Faker("street_address")
+    city = factory.Faker("city")
+    state = factory.Faker("state_abbr")
+    zip_code = factory.Faker("postcode")
     operating_hours = "9am - 5pm Monday-Friday"
     phone_number = factory.Faker("phone_number")
     email = factory.Faker("email")
