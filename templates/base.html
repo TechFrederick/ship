@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en-US" class="bg-white subpixel-antialiased">
 <head>
@@ -17,8 +18,12 @@
     {% block main %}{% endblock %}
   </main>
 
+  <a href="https://shipfrederick.com/">
+    <img class="px-24 py-8" src="{% static "ship-logo.jpg" %}" alt="SHIP logo">
+  </a>
+
   <footer class="container mx-auto border-t border-gray-400 p-4 text-center text-sm text-gray-600 print-hide">
-    <a href="#" class="mx-1 hover:text-gray-900">About</a>
+    <a href="#" class="mx-1 hover:text-gray-900">Terms of Use</a>
   </footer>
 </body>
 </html>
