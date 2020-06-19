@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 
 {% block main %}
+  <div class="bg-orange-100 border-t border-b border-orange-500 text-orange-800 px-4 py-3 mx-2 mt-4 mb-2" role="alert">
+    <p class="font-bold">Meals at Frederick Rescue Mission</p>
+    <p class="text-sm">The Frederick Rescue Mission serves meals at lunch daily. Lunches are served at ...</p>
+    <p class="text-xs mt-2">Read more</p>
+  </div>
+
   <div class="flex flex-row flex-wrap items-stretch">
     {% for category in servicecategory_list %}
       <div class="w-1/2 p-2
