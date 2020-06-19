@@ -1,7 +1,23 @@
 {% extends "base.html" %}
 
 {% block main %}
-  {% for category in servicecategory_list %}
-    <h1><a href="{% url "core:service-category-detail" category.slug %}">{{ category.name }}</a></h1>
-  {% endfor %}
+  <div class="flex flex-row flex-wrap items-stretch">
+    {% for category in servicecategory_list %}
+      <div class="w-1/2 p-2
+        ">
+        <a class="w-full self-center" href="{% url "core:service-category-detail" category.slug %}">
+          <div class="p-4 text-center text-white text-xl font-medium rounded-sm
+            {% cycle 'bg-teal-400' 'bg-orange-500' 'bg-purple-600' 'bg-yellow-500' 'bg-red-600' 'bg-blue-500' 'bg-pink-500' 'bg-yellow-400' 'bg-green-600' 'bg-blue-600' 'bg-green-500' 'bg-gray-600' %}
+            ">
+            {{ category.name }}
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="text-center m-8">
+    <a href="tel:211" class="bg-red-700 text-white font-semibold py-3 px-6 rounded-full text-xl">
+      Get Help Now
+    </a>
+  </div>
 {% endblock %}
