@@ -11,16 +11,21 @@
 
   <main class="container mx-auto p-2 flex-grow">
     <a href="{% url "core:index" %}">
-      <h1 class="text-3xl text-blue-800 text-center">SHIP Haven</h1>
+      <h1 class="text-3xl text-blue-800 text-center flex items-center justify-center">
+        <svg class="fill-current w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M8 1.88V0h2v16h10l-4 4H2l-2-4h8v-2H0v-.26A24.03 24.03 0 0 0 8 1.88zM19.97 14H10v-.36A11.94 11.94 0 0 0 10 .36v-.2A16.01 16.01 0 0 1 19.97 14z"/></svg>
+        SHIP Haven
+      </h1>
     </a>
     <hr class="my-2">
 
     {% block main %}{% endblock %}
   </main>
 
-  <a href="https://shipfrederick.com/">
-    <img class="px-24 py-8" src="{% static "ship-logo.jpg" %}" alt="SHIP logo">
-  </a>
+  <div class="py-8">
+    <a href="https://shipfrederick.com/">
+      <img class="px-24" src="{% static "ship-logo.jpg" %}" alt="SHIP logo">
+    </a>
+  </div>
 
   <footer class="container mx-auto border-t border-gray-400 p-4 text-center text-sm text-gray-600 print-hide">
     <span class="mx-1">&copy; {% now "Y" %} SHIP of Frederick County</span>

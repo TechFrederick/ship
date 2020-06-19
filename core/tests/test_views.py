@@ -1,4 +1,9 @@
+import datetime
+
+from django.utils import timezone
 from test_plus.test import TestCase
+
+from announcements.tests.factories import AnnouncementFactory
 
 from .factories import ServiceFactory, ServiceCategoryFactory
 
@@ -14,6 +19,23 @@ class TestIndex(TestCase):
         response = self.get("core:index")
 
         self.assertContains(response, category.name)
+
+    def test_has_announcements(self):
+        announcement = AnnouncementFactory()
+
+        self.get("core:index")
+
+        announcements = self.get_context("announcements")
+        assert list(announcements) == [announcement]
+
+    def test_excludes_expired_announcements(self):
+        """Old announcements are not included on the page."""
+        AnnouncementFactory(expires_at=timezone.now() - datetime.timedelta(days=1))
+
+        self.get("core:index")
+
+        announcements = self.get_context("announcements")
+        assert list(announcements) == []
 
 
 class TestServiceCategoryDetailView(TestCase):
