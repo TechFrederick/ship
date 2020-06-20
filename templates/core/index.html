@@ -4,7 +4,7 @@
   {% if announcements %}
     {% for announcement in announcements %}
       <a href="#">
-        <div class="bg-orange-100 border-t border-b border-orange-500 text-orange-800 px-4 py-3 mx-2 mt-4 mb-2" role="alert">
+        <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3 mx-4 mt-4 mb-2" role="alert">
           <p class="font-bold">{{ announcement.title }}</p>
           <p class="text-sm">{{ announcement.description|truncatewords:16 }}</p>
           <p class="text-xs mt-2">Read more</p>
@@ -13,7 +13,7 @@
     {% endfor %}
   {% endif %}
 
-  <div class="flex flex-row flex-wrap items-stretch mb-8">
+  <div class="flex flex-row flex-wrap items-stretch px-2">
     {% for category in servicecategory_list %}
       <div class="w-1/2 p-2
         ">
@@ -27,9 +27,5 @@
       </div>
     {% endfor %}
   </div>
-  <div class="text-center">
-    <a href="tel:211" class="bg-red-700 text-white font-semibold py-3 px-6 rounded-full text-xl">
-      Get Help Now
-    </a>
-  </div>
+
 {% endblock %}

@@ -9,14 +9,21 @@
 </head>
 <body class="min-h-screen flex flex-col">
 
-  <main class="container mx-auto p-2 flex-grow">
-    <a href="{% url "core:index" %}">
-      <h1 class="text-3xl text-blue-800 text-center flex items-center justify-center">
-        <svg class="fill-current w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M8 1.88V0h2v16h10l-4 4H2l-2-4h8v-2H0v-.26A24.03 24.03 0 0 0 8 1.88zM19.97 14H10v-.36A11.94 11.94 0 0 0 10 .36v-.2A16.01 16.01 0 0 1 19.97 14z"/></svg>
-        SHIP Haven
-      </h1>
-    </a>
-    <hr class="my-2">
+  <main class="container mx-auto flex-grow">
+    <div class="flex flex-row items-center justify-between bg-blue-700 px-4 py-2">
+      <a href="{% url "core:index" %}">
+        <h1 class="text-3xl text-white text-center flex items-center justify-center">
+          <svg class="fill-current w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M8 1.88V0h2v16h10l-4 4H2l-2-4h8v-2H0v-.26A24.03 24.03 0 0 0 8 1.88zM19.97 14H10v-.36A11.94 11.94 0 0 0 10 .36v-.2A16.01 16.01 0 0 1 19.97 14z"/></svg>
+          SHIP Haven
+        </h1>
+      </a>
+      <div class="text-center">
+        <a href="tel:211" class="inline-flex items-center bg-red-600 text-white font-semibold py-2 px-4 rounded-full text-md">
+          <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M20 18.35V19a1 1 0 0 1-1 1h-2A17 17 0 0 1 0 3V1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4c0 .56-.31 1.31-.7 1.7L3.16 8.84c1.52 3.6 4.4 6.48 8 8l2.12-2.12c.4-.4 1.15-.71 1.7-.71H19a1 1 0 0 1 .99 1v3.35z"/></svg>
+          Get Help
+        </a>
+      </div>
+    </div>
 
     {% block main %}{% endblock %}
   </main>
