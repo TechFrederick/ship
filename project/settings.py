@@ -131,4 +131,11 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-django_heroku.settings(locals(), secret_key=False, test_runner=False)
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {"console": {"class": "logging.StreamHandler"}},
+    "root": {"handlers": ["console"], "level": "WARNING"},
+}
+
+django_heroku.settings(locals(), secret_key=False, test_runner=False, logging=False)
