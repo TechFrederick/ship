@@ -13,22 +13,24 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 
 import django_heroku
+import environ
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+env = environ.Env(DEBUG=(bool, False), DEBUG_TOOLBAR=(bool, False))
+env_file = os.path.join(BASE_DIR, ".env")
+environ.Env.read_env(env_file)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "ht$zwi=p&&+2e*2s#xj!p#yrw5gwua70vse4&vz@!dadp2&p1g"
+SECRET_KEY = env("SECRET_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+DEBUG = env("DEBUG")
 # Control whether the Django Debug Toolbar is enabled or disabled.
-DEBUG_TOOLBAR = True
+DEBUG_TOOLBAR = env("DEBUG_TOOLBAR")
+
 
 ALLOWED_HOSTS = ["*"]
 

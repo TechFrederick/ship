@@ -54,6 +54,18 @@ Install application packages.
 $ pip install -r requirements.txt
 ```
 
+The application needs to read environment variables
+to run properly
+(because that's the Heroku model
+of providing configuration via environment variables).
+To set those variables locally,
+copy the `.env.sample` file
+as `.env`.
+
+```bash
+$ cp .env.sample .env
+```
+
 Apply Django database migrations locally.
 
 ```bash
