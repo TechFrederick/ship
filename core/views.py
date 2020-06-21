@@ -28,4 +28,4 @@ class ServiceCategoryDetailView(DetailView):
 
 
 class ServiceDetailView(DetailView):
-    model = Service
+    queryset = Service.objects.all().select_related("category")

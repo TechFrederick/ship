@@ -5,7 +5,10 @@
     {% for announcement in announcements %}
       <a href="#">
         <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3 mx-4 mt-4 mb-2" role="alert">
-          <p class="font-bold">{{ announcement.title }}</p>
+          <p class="font-bold inline-flex items-center">
+            <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M3 6c0-1.1.9-2 2-2h8l4-4h2v16h-2l-4-4H5a2 2 0 0 1-2-2H1V6h2zm8 9v5H8l-1.67-5H5v-2h8v2h-2z"/></svg>
+            {{ announcement.title }}
+          </p>
           <p class="text-sm">{{ announcement.description|truncatewords:16 }}</p>
           <p class="text-xs mt-2">Read more</p>
         </div>
