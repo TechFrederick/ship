@@ -133,3 +133,6 @@ dmypy.json
 
 # Mac
 .DS_Store
+
+# Django
+staticfiles
