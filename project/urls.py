@@ -18,8 +18,8 @@ from django.contrib import admin
 from django.urls import include, path
 
 # Tweak the admin site.
-admin.site.site_header = "SHIP administration"
-admin.site.site_title = "SHIP admin"
+admin.site.site_header = "SHIP Haven administration"
+admin.site.site_title = "SHIP Haven admin"
 
 urlpatterns = [
     path("", include("core.urls")),
