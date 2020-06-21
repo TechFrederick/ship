@@ -23,6 +23,7 @@ admin.site.site_title = "SHIP admin"
 
 urlpatterns = [
     path("", include("core.urls")),
+    path("announcements/", include("announcements.urls")),
     path("shipyard/", admin.site.urls),
 ]
 
