@@ -5,7 +5,7 @@ Services web app for SHIP, Student Homelessness Initiative Partnership of Freder
 ## Setup
 
 These commands are examples that can run
-on Mac terminal.
+on a Mac terminal.
 Most of the commands should be accurate
 for Windows.
 Differences are highlighted.
