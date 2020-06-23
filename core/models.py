@@ -21,16 +21,18 @@ class Service(models.Model):
 
     name = models.CharField(max_length=128)
     description = models.TextField()
-    website = models.URLField(default="")
+    website = models.URLField(default="", blank=True)
 
     street_address = models.CharField(max_length=256, default="")
     city = models.CharField(max_length=128, default="")
     state = models.CharField(max_length=32, default="")
     zip_code = models.CharField(max_length=16, default="")
+    latitude = models.CharField(max_length=16, default="", blank=True)
+    longitude = models.CharField(max_length=16, default="", blank=True)
 
-    operating_hours = models.CharField(max_length=256)
-    phone_number = models.CharField(max_length=32)
-    email = models.EmailField()
+    operating_hours = models.CharField(max_length=256, blank=True)
+    phone_number = models.CharField(max_length=32, blank=True)
+    email = models.EmailField(blank=True)
     category = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE)
 
     def __str__(self):

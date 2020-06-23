@@ -20,6 +20,8 @@ class ServiceFactory(factory.django.DjangoModelFactory):
     city = factory.Faker("city")
     state = factory.Faker("state_abbr")
     zip_code = factory.Faker("postcode")
+    latitude = factory.Faker("latitude")
+    longitude = factory.Faker("longitude")
     operating_hours = "9am - 5pm Monday-Friday"
     phone_number = factory.Faker("phone_number")
     email = factory.Faker("email")

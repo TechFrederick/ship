@@ -27,6 +27,8 @@ class TestService(TestCase):
         assert service.city
         assert service.state
         assert service.zip_code
+        assert service.latitude
+        assert service.longitude
         assert service.operating_hours
         assert service.phone_number
         assert service.email
