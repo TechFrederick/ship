@@ -6,37 +6,32 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0001_initial'),
+        ("core", "0001_initial"),
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='service',
-            name='location',
+        migrations.RemoveField(model_name="service", name="location",),
+        migrations.AddField(
+            model_name="service",
+            name="city",
+            field=models.CharField(default="", max_length=128),
         ),
         migrations.AddField(
-            model_name='service',
-            name='city',
-            field=models.CharField(default='', max_length=128),
+            model_name="service",
+            name="state",
+            field=models.CharField(default="", max_length=32),
         ),
         migrations.AddField(
-            model_name='service',
-            name='state',
-            field=models.CharField(default='', max_length=32),
+            model_name="service",
+            name="street_address",
+            field=models.CharField(default="", max_length=256),
         ),
         migrations.AddField(
-            model_name='service',
-            name='street_address',
-            field=models.CharField(default='', max_length=256),
+            model_name="service", name="website", field=models.URLField(default=""),
         ),
         migrations.AddField(
-            model_name='service',
-            name='website',
-            field=models.URLField(default=''),
-        ),
-        migrations.AddField(
-            model_name='service',
-            name='zip_code',
-            field=models.CharField(default='', max_length=16),
+            model_name="service",
+            name="zip_code",
+            field=models.CharField(default="", max_length=16),
         ),
     ]

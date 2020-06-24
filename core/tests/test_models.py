@@ -9,6 +9,9 @@ class TestServiceCategory(TestCase):
 
         assert category.name
         assert category.slug
+        assert category.description
+        assert category.icon
+        assert category.color
 
     def test_str(self):
         category = ServiceCategoryFactory()

@@ -7,6 +7,8 @@ class ServiceCategoryFactory(factory.django.DjangoModelFactory):
 
     name = factory.Sequence(lambda n: f"Service Category {n}")
     slug = factory.Sequence(lambda n: f"service-category-{n}")
+    description = factory.Faker("sentence")
+    icon = "categories/shelter.png"
 
 
 class ServiceFactory(factory.django.DjangoModelFactory):

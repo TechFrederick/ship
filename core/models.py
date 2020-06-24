@@ -8,6 +8,25 @@ class ServiceCategory(models.Model):
     slug = models.SlugField(
         help_text="This is the unique name that will display in the URL."
     )
+    description = models.TextField(default="")
+    icon = models.CharField(
+        max_length=128,
+        help_text=(
+            "Upload a 300px x 300px to the 'static' directory. Add file path here."
+        ),
+        default="",
+    )
+    COLOR_CHOICES = (
+        ("red", "Red"),
+        ("teal", "Teal"),
+        ("orange", "Orange"),
+        ("purple", "Purple"),
+        ("green", "Green"),
+        ("indigo", "Indigo"),
+        ("yellow", "Yellow"),
+        ("gray", "Gray"),
+    )
+    color = models.CharField(max_length=8, choices=COLOR_CHOICES, default="gray")
 
     class Meta:
         verbose_name_plural = "service categories"
