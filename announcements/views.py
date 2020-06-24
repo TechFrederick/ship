@@ -1,7 +1,9 @@
-from django.views.generic import DetailView
+from django.utils import timezone
+from django.views.generic import ListView
 
 from .models import Announcement
 
 
-class AnnouncementDetailView(DetailView):
-    model = Announcement
+class AnnouncementListView(ListView):
+    def get_queryset(self):
+        return Announcement.objects.filter(expires_at__gte=timezone.now())

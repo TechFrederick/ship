@@ -17,22 +17,7 @@
     </a>
   </section>
 
-  {% if announcements %}
-    {% for announcement in announcements %}
-      <a href="{% url "announcements:detail" announcement.pk %}">
-        <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3 mx-4 mt-4{% if not forloop.last %} mb-2{% endif %}" role="alert">
-          <p class="font-bold inline-flex items-center">
-            <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M3 6c0-1.1.9-2 2-2h8l4-4h2v16h-2l-4-4H5a2 2 0 0 1-2-2H1V6h2zm8 9v5H8l-1.67-5H5v-2h8v2h-2z"/></svg>
-            {{ announcement.title }}
-          </p>
-          <p class="text-sm">{{ announcement.description|truncatewords:16 }}</p>
-          <p class="text-xs mt-2">Read more</p>
-        </div>
-      </a>
-    {% endfor %}
-  {% endif %}
-
-  <section id="main-content" class="container mx-auto flex flex-wrap pt-4 pb-12 bg-white">
+  <section class="container mx-auto flex flex-wrap pt-4 pb-12 bg-white">
     <div class="w-full pb-1 text-2xl text-center font-extrabold text-blue-900">
       <h2 id="services" class="">
         Services and Support
@@ -40,7 +25,7 @@
     </div>
 
     {% for category in servicecategory_list %}
-      <div class="w-full md:w-1/3 xl:w-1/3 p-5 flex flex-col">
+      <div class="w-full md:w-1/3 xl:w-1/3 p-4 flex flex-col">
         <div class="flex flex-wrap flex-col-reverse content-between sm:flex-row text-gray-800" >
           <a class="w-full self-center" href="{% url "core:service-category-detail" category.slug %}">
             <img class="w-full bg-{{ category.color }}-500 ripple object-cover shadow-lg"  src="{% static category.icon %}" alt="{{ category.name }}">
@@ -53,6 +38,27 @@
       </div>
     {% endfor %}
 
+  </section>
+
+  <section class="bg-gray-300 border-b p-2 h-auto">
+    <div class="flex flex-wrap flex-col-reverse sm:flex-row items-center justify-center">
+      <div class="w-full sm:w-1/2 py-6 mt-6">
+        {% if announcements %}
+          {% for announcement in announcements %}
+            <div class="px-4 py-3 mx-2 mt-4 mb-2 border-t-8 border-blue-800 text-gray-800 " >
+              <p class="font-bold uppercase text-xs text-gray-600">Announcement</p>
+              <p class="font-bold text-xl">{{ announcement.title }}</p>
+              <p class="text-l">
+                {{ announcement.description|truncatewords:25 }}
+                <a class="font-bold uppercase text-xs text-blue-600"
+                  href="{% url "announcements:list" %}#announcement-{{ announcement.id }}">
+                  Continue Reading</a>
+              </p>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
   </section>
 
 {% endblock %}

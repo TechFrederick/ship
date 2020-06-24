@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block main %}
+  <section class="text-lg bg-gray-100 border-b pt-5 pb-5 h-auto">
+    <div class="w-full p-6 pb-1 -mt-6 text-2xl text-center font-extrabold text-blue-900"> <h2 class="">Current Announcements</h2></div>
+    <div class="flex items-center justify-center">
+      <div class="w-full p-6 mt-6">
+        {% if announcement_list %}
+          {% for announcement in announcement_list %}
+            <div id="announcement-{{ announcement.id }}"class="px-4 py-3 mx-2 mt-2 mb-2 border-t-8 border-blue-800 text-gray-800 " >
+              <p class="font-bold uppercase text-xs text-gray-600">Announcement</p>
+              <p class="font-bold text-xl text-gray-800 ">{{ announcement.title }}</p>
+              <p class="text-l  text-gray-800">{{ announcement.description }}</p>
+            </div>
+            {# TODO: If we can get back callout and URL, then great. #}
+            {# {% if announcement.callout %} #}
+            {#   <div class="px-4 py-3 mx-2 mt-4 mb-2" > #}
+            {#     <div id="url" class="text-md text-left p-1 bg-gray-500 ripple rounded-md mb-1"> #}
+            {#       <a class="text-sm text-left p-2 flex" href="{{ announcement.url }}" target="_blank"> #}
+            {#         <span class="mr-2"> #}
+            {#           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path class="heroicon-ui" d="M4.06 13a8 8 0 0 0 5.18 6.51A18.5 18.5 0 0 1 8.02 13H4.06zm0-2h3.96a18.5 18.5 0 0 1 1.22-6.51A8 8 0 0 0 4.06 11zm15.88 0a8 8 0 0 0-5.18-6.51A18.5 18.5 0 0 1 15.98 11h3.96zm0 2h-3.96a18.5 18.5 0 0 1-1.22 6.51A8 8 0 0 0 19.94 13zm-9.92 0c.16 3.95 1.23 7 1.98 7s1.82-3.05 1.98-7h-3.96zm0-2h3.96c-.16-3.95-1.23-7-1.98-7s-1.82 3.05-1.98 7zM12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20z"/></svg> #}
+            {#         </span> #}
+            {#         More info / {{ announcement.callout }} #}
+            {#       </a> #}
+            {#     </div> #}
+            {#   </div> #}
+            {# {% endif %} #}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -41,3 +41,5 @@ class SimplePasswordHasher(BasePasswordHasher):
 
 
 PASSWORD_HASHERS = ("project.testing_settings.SimplePasswordHasher",)
+
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
