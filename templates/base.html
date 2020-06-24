@@ -25,29 +25,24 @@
     {% block main %}{% endblock %}
   </main>
 
-  <div class="py-8">
-    <a href="https://shipfrederick.com/">
-      <img class="px-24" src="{% static "ship-logo.jpg" %}" alt="SHIP logo">
-    </a>
-  </div>
-
-  <div class="mx-8 mb-4 font-serif italic text-sm text-blue-900">
-    <p class="mb-2">
-      <a class="text-blue-700" href="https://shipfrederick.com/">SHIP of Frederick County</a>
-      provides urgent services and critical support
-      for the hundreds of youth experiencing homelessness
-      in Frederick County each year.
-    <p>
-    </p>
-      SHIP believes in the power of education
-      to transform these young people’s lives.
-    </p>
-  </div>
-
-  <footer class="container mx-auto border-t border-gray-400 p-4 text-center text-sm text-gray-600 print-hide">
-    <span class="mx-1">&copy; {% now "Y" %} SHIP of Frederick County</span>
-
-    <a href="#" class="mx-1 hover:text-gray-900">Terms of Use</a>
+  <footer class="container mx-auto  px-8">
+    <div class="w-full flex flex-col md:flex-row py-6">
+      <div class="flex-1 mb-6">
+        <p class="font-bold text-gray-800 mb-2">
+          <a class="text-blue-700" href="https://shipfrederick.com/">SHIP of Frederick County</a>
+          provides urgent services and critical support
+          for the hundreds of youth experiencing homelessness
+          in Frederick County each year.
+        </p>
+        <p class="font-bold text-gray-800 mb-2">
+          SHIP believes in the power of education
+          to transform these young people’s lives.
+        </p>
+        <p class="text-gray-800">&copy; {% now "Y" %} SHIP of Frederick County<p>
+        <a href="https://www.freepik.com/free-photos-vectors/background target="_blank"" class="text-xs text-gray-500">Icons by freepik - www.freepik.com</a>
+      </div>
+    </div>
   </footer>
+
 </body>
 </html>
