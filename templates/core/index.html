@@ -2,6 +2,21 @@
 {% load static %}
 
 {% block main %}
+
+  <section class="bg-red-700 border-b mt-2 pt-5 pb-5 h-auto">
+    <a href="tel:211">
+      <div class="flex flex-row items-start justify-center mr-4">
+          <img class="hover:opacity-75 h-24"  src="{% static "crisis-211.png" %}" alt="emergency operator icon">
+
+          <div class="text-white">
+            <h3 class="font-bold text-xl mb-2">Do you need immediate help or just have a question?</h3>
+            <p class="text-white text-base">Maryland’s Helpline is available 24/7 to provide support, guidance, and assistance.
+            Please <span class="font-bold" href="tel:211">call 211</span> and select option 1, text your zip code to 898-211, or visit 211MD.org </p>
+          </div>
+      </div>
+    </a>
+  </section>
+
   {% if announcements %}
     {% for announcement in announcements %}
       <a href="{% url "announcements:detail" announcement.pk %}">
