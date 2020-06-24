@@ -40,25 +40,25 @@
 
   </section>
 
-  <section class="bg-gray-300 border-b p-2 h-auto">
-    <div class="flex flex-wrap flex-col-reverse sm:flex-row items-center justify-center">
-      <div class="w-full sm:w-1/2 py-6">
-        {% if announcements %}
-          {% for announcement in announcements %}
-            <div class="px-4 py-3 mx-2 mt-4 mb-2 border-t-8 border-blue-800 text-gray-800 " >
-              <p class="font-bold uppercase text-xs text-gray-600">Announcement</p>
-              <p class="font-bold text-xl">{{ announcement.title }}</p>
-              <p class="text-l">
-                {{ announcement.description|truncatewords:25 }}
-                <a class="font-bold uppercase text-xs text-blue-600"
-                  href="{% url "announcements:list" %}#announcement-{{ announcement.id }}">
-                  Continue Reading</a>
-              </p>
-            </div>
-          {% endfor %}
-        {% endif %}
+  {% if announcements %}
+    <section class="bg-gray-300 border-b p-2 h-auto">
+      <div class="flex flex-wrap flex-col-reverse sm:flex-row items-center justify-center">
+        <div class="w-full sm:w-1/2 py-6">
+            {% for announcement in announcements %}
+              <div class="px-4 py-3 mx-2 mt-4 mb-2 border-t-8 border-blue-800 text-gray-800 " >
+                <p class="font-bold uppercase text-xs text-gray-600">Announcement</p>
+                <p class="font-bold text-xl">{{ announcement.title }}</p>
+                <p class="text-l">
+                  {{ announcement.description|truncatewords:25 }}
+                  <a class="font-bold uppercase text-xs text-blue-600"
+                    href="{% url "announcements:list" %}#announcement-{{ announcement.id }}">
+                    Continue Reading</a>
+                </p>
+              </div>
+            {% endfor %}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  {% endif %}
 
 {% endblock %}
