@@ -54,10 +54,3 @@ class TestServiceCategoryDetailView(TestCase):
 
         services = self.get_context("services")
         assert list(services) == [service]
-
-
-class TestServiceDetailView(TestCase):
-    def test_ok(self):
-        service = ServiceFactory()
-
-        self.get_check_200("core:service-detail", pk=service.id)

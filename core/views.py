@@ -25,7 +25,3 @@ class ServiceCategoryDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context["services"] = Service.objects.filter(category=self.object)
         return context
-
-
-class ServiceDetailView(DetailView):
-    queryset = Service.objects.all().select_related("category")
