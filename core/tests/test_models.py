@@ -24,6 +24,7 @@ class TestService(TestCase):
         service = ServiceFactory()
 
         assert service.name
+        assert service.organization_name
         assert service.description
         assert service.website
         assert service.street_address

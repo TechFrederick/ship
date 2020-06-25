@@ -16,6 +16,7 @@ class ServiceFactory(factory.django.DjangoModelFactory):
         model = "core.Service"
 
     name = factory.Sequence(lambda n: f"Service {n}")
+    organization_name = factory.Faker("company")
     description = factory.Faker("paragraph")
     website = factory.Faker("url")
     street_address = factory.Faker("street_address")

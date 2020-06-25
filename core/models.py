@@ -39,6 +39,7 @@ class Service(models.Model):
     """A community service that is available to homeless citizens."""
 
     name = models.CharField(max_length=128)
+    organization_name = models.CharField(max_length=128, default="")
     description = models.TextField()
     website = models.URLField(default="", blank=True)
 
