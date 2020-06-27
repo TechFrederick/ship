@@ -9,6 +9,7 @@ dj-database-url==0.5.0    # via django-heroku
 django-debug-toolbar==2.1  # via -r requirements.in
 django-environ==0.4.5     # via -r requirements.in
 django-heroku==0.3.1      # via -r requirements.in
+django-ordered-model==3.4.1  # via -r requirements.in
 django==3.0.7             # via -r requirements.in, django-debug-toolbar, django-heroku
 gunicorn==20.0.4          # via -r requirements.in
 psycopg2==2.8.5           # via django-heroku

@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Third party applications
+    "ordered_model",
     # SHIP applications
     "announcements",
     "core",

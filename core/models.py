@@ -1,7 +1,8 @@
 from django.db import models
+from ordered_model.models import OrderedModel
 
 
-class ServiceCategory(models.Model):
+class ServiceCategory(OrderedModel):
     """Each service must belong to a category for easy browsing."""
 
     name = models.CharField(max_length=128)
@@ -28,14 +29,14 @@ class ServiceCategory(models.Model):
     )
     color = models.CharField(max_length=8, choices=COLOR_CHOICES, default="gray")
 
-    class Meta:
+    class Meta(OrderedModel.Meta):
         verbose_name_plural = "service categories"
 
     def __str__(self):
         return self.name
 
 
-class Service(models.Model):
+class Service(OrderedModel):
     """A community service that is available to homeless citizens."""
 
     name = models.CharField(max_length=128)
@@ -54,6 +55,12 @@ class Service(models.Model):
     phone_number = models.CharField(max_length=32, blank=True)
     email = models.EmailField(blank=True)
     category = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE)
+
+    # Services should be orderable within their category.
+    order_with_respect_to = "category"
+
+    class Meta(OrderedModel.Meta):
+        pass
 
     def __str__(self):
         return self.name
