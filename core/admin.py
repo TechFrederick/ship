@@ -13,3 +13,4 @@ class ServiceCategoryAdmin(OrderedModelAdmin):
 @admin.register(Service)
 class ServiceAdmin(OrderedModelAdmin):
     list_display = ("name", "organization_name", "category", "move_up_down_links")
+    ordering = ["category", "order"]
