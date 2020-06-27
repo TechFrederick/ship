@@ -1,8 +1,30 @@
-# ship
+# SHIP Haven
 
 Services web app for SHIP, Student Homelessness Initiative Partnership of Frederick County
 
-## Setup
+## Deployment
+
+These instruction assume that you are already a collaborator
+on SHIP's Heroku account.
+
+The SHIP Haven web application is deployed to Heroku.
+Follow the [Heroku documentation](https://devcenter.heroku.com/articles/git#creating-a-heroku-remote)
+to add a Heroku remote
+to your local repository clone.
+
+To trigger a deploy, run:
+
+```bash
+$ git push heroku master
+```
+
+This will build a new Heroku slug,
+run the `release` command
+in the `Procfile`
+to run any Django migrations,
+and make the new version of the application live.
+
+## Developer Setup
 
 These commands are examples that can run
 on a Mac terminal.
