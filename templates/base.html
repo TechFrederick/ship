@@ -47,9 +47,16 @@
       <div class="w-full text-center sm:w-1/2 p-6 mt-6">
         <img class="hover:opacity-75 h-32 m-auto pb-5"  src="{% static "frederick-county.png" %}" alt="Frederick County icon">
 
-        <div class="text-white">
-          <div class="text-gray-900 font-bold text-xl mb-2">Sign up to recieve email updates.</div>
-          <p class="text-gray-700 text-base">Mailchimp Signup and Disclaimer here</p>
+        <div class="text-gray-900 font-bold text-xl mb-2">Sign up to receive announcements.</div>
+        <div class="text-gray-700 text-base">
+          <form action="https://shipfrederick.us10.list-manage.com/subscribe/post?u=fceb2fa00c7e8723b4bba0ee9&id=5af450fae4" method="POST">
+            <input type="email" name="EMAIL"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Your email address" required>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_fceb2fa00c7e8723b4bba0ee9_5af450fae4" tabindex="-1" value=""></div>
+            <input type="submit" value="Sign Up" class="bg-blue-600 hover:bg-blue-700 text-white font-bold mt-4 py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+          </form>
         </div>
       </div>
   </section>
